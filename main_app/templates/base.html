@@ -1,0 +1,42 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>NBA Collection</title>
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <style>
+      select {
+          display: block;
+      }
+  </style>
+</head>
+<body>
+  <header class="navbar-fixed">
+    <nav>
+      <div class="nav-wrapper ">
+        <ul>
+          <li><a href="/" class="left brand-logo">&nbsp;&nbsp;NBA Player Collection</a></li>
+        </ul>
+        <ul class="right">
+          <li><a href="/about">About</a></li>
+          <li><a href="/players/create">Create</a></li>
+          <li><a href="/teams">Teams</a></li>
+          <li><a href="/players">Players</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <main class="container">
+    {% block content %}
+    {% endblock %}
+  </main>
+  <footer class="page-footer">
+    <div class="right"> &copy; 2019 NBA Collection &nbsp;</div>
+  </footer>
+</body>
+</html>

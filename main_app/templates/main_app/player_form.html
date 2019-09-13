@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+<h4> <span class="teal-text">{{ object.name }}</span></h4>
+<form action="" method="POST">
+    {% csrf_token %} 
+    <table>
+        <tbody>
+    {{ form.as_table }}
+        </tbody>
+    </table>
+    <input type="submit" value="Submit!" class='btn'>
+</form>
+
+{% endblock %}
