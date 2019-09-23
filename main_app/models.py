@@ -7,7 +7,9 @@ from django.contrib.auth.models import User
 # Create your models here.
 class Team(models.Model):
     name = models.CharField(max_length=40)
-
+    user = models.ForeignKey(User, on_delete=models.CASCADE, blank=True, null=True)
+    
+    
     def __str__(self):
         return self.name
 
@@ -19,6 +21,9 @@ class Player(models.Model):
     points_per_game = models.IntegerField(validators =[MaxValueValidator(100)])
     description = models.TextField(max_length=250)
     team = models.ForeignKey(Team, on_delete=models.CASCADE)
+    
+    
+    
     def __str__(self):
         return self.name
 
@@ -27,12 +32,7 @@ class Player(models.Model):
 
     
 
-class Game(models.Model):
-    arena = models.CharField(max_length=100)
-    city = models.CharField(max_length=40)
-    date = models.DateField()
-    teams = models.ManyToManyField(Team)
-    
+
 
 
     
